@@ -1,6 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import { TextField } from '@mui/material';
@@ -18,10 +17,27 @@ const style = {
 };
 
 export default function AppointmentModal({ date, open, handleClose, name, time }) {
-
+    const [formData, setFormData] = useState({});
+    const handleChange = e => {
+        const newDate = date.toLocaleDateString()
+        const newData = { ...formData, newDate, time };
+        newData[e.target.name] = e.target.value;
+        setFormData(newData);
+    }
     const handleSubmit = e => {
         e.preventDefault();
-        alert('Ok')
+        // console.log(formData);
+        fetch('http://localhost:5000/addAppointment', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(formData)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+            })
     }
     return (
         <div>
@@ -47,18 +63,24 @@ export default function AppointmentModal({ date, open, handleClose, name, time }
                             fullWidth
                             size="small"
                             placeholder="Name"
+                            name="name"
+                            onChange={handleChange}
                         />
                         <TextField
                             margin="dense"
                             fullWidth
                             size="small"
+                            name="phone"
                             placeholder="Phone Number"
+                            onChange={handleChange}
                         />
                         <TextField
                             margin="dense"
                             fullWidth
                             size="small"
                             placeholder="Email"
+                            name="email"
+                            onChange={handleChange}
                         />
                         <TextField
                             margin="dense"
@@ -66,7 +88,7 @@ export default function AppointmentModal({ date, open, handleClose, name, time }
                             size="small"
                             value={new Date(date).toDateString()}
                         />
-                        <MuiButton type="submit">Submit</MuiButton>
+                        <MuiButton variant="contained" type="submit" sx={{ mt: 1 }}>Submit</MuiButton>
                     </form>
                 </Box>
             </Modal>

@@ -29,7 +29,7 @@ const Appointment = () => {
                         <Typography variant="h6" color="#19D3AE">Appointment</Typography>
                         <Typography variant="h4" color="#fff">Make an Appointment today</Typography>
                         <Typography variant="body1" sx={{ my: 3, color: '#fff' }}> Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit, laudantium consequatur? Explicabo neque quod ea. </Typography>
-                        <MuiButton>Learn more</MuiButton>
+                        <MuiButton variant="contained">Learn more</MuiButton>
                     </Grid>
                 </Grid>
             </Container>

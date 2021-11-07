@@ -24,7 +24,7 @@ const Banner = () => {
                         <Typography variant="body1" sx={{ lineHeight: 2, my: 3 }}>
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto earum in eaque voluptatem accusantium velit ratione eveniet asperiores dolores labore!
                         </Typography>
-                        <MuiButton>Get Appointment</MuiButton>
+                        <MuiButton variant="contained">Get Appointment</MuiButton>
                     </Grid>
                     <Grid item xs={12} sm={12} md={6} lg={6}>
                         <img src={chairImg} alt="" width="100%" />

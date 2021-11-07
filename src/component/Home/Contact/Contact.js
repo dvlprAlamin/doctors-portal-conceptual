@@ -10,7 +10,8 @@ const Contact = () => {
             backgroundBlendMode: 'overlay',
             backgroundRepeat: 'no-repeat',
             textAlign: 'center',
-            padding: '30px'
+            padding: '30px',
+            marginTop: 100
         },
         textArea: {
             border: 0,
@@ -25,7 +26,6 @@ const Contact = () => {
     const { root, textArea } = useStyle()
     return (
         <div className={root}>
-            {/* <div> */}
             <Container maxWidth="md">
                 <Typography variant="h6" color="#19D3AE">Contact us</Typography>
                 <Typography variant="h4" color="#fff">Always connect with us</Typography>
@@ -44,9 +44,8 @@ const Contact = () => {
                     sx={{ backgroundColor: '#fff', borderRadius: 1 }}
                 />
                 <textarea rows={10} className={textArea} placeholder="Your Message"></textarea>
-                <MuiButton>Submit</MuiButton>
+                <MuiButton variant="contained">Submit</MuiButton>
             </Container>
-            {/* </div> */}
         </div>
     );
 };

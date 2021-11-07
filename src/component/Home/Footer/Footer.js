@@ -74,7 +74,7 @@ const Footer = () => {
                         <MuiButton variant="contained">+8065432145</MuiButton>
                     </Grid>
                 </Grid>
-                <Typography sx={{ textAlign: 'center', pt: 4 }} variant="subtitle2">Copyright &copy; {new Date().getFullYear()} All Rights Reserved</Typography>
+                <Typography sx={{ textAlign: 'center', py: 4 }} variant="subtitle2">Copyright &copy; {new Date().getFullYear()} All Rights Reserved</Typography>
             </Container>
         </footer>
     );
